@@ -944,19 +944,22 @@ window.onload = () => {
     }
 
     /* ২. ম্যানিফেস্ট সেটআপ */
-    const manifest = {
-        "name": "Islamic Hub Pro",
-        "short_name": "IslamicHub",
-        "start_url": "index.html",
-        "display": "standalone",
-        "background_color": "#084d3e",
-        "theme_color": "#084d3e",
-        "icons": [{
-            "src": "https://cdn-icons-png.flaticon.com/512/2913/2913401.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }]
-    };
+const manifest = {
+    "name": "Islamic Hub",
+    "short_name": "Islamic Hub",
+    "start_url": "index.html",
+    "display": "standalone", // এটি অবশ্যই রাখুন যাতে অ্যাপের মতো দেখায়
+    "background_color": "#084d3e", // আপনার স্প্ল্যাশ স্ক্রিনের ব্যাকগ্রাউন্ড কালার
+    "theme_color": "#084d3e",
+    "icons": [{
+        "src": "logo.png", // আপনার নতুন লোগোর নাম (যদি আপলোড করে থাকেন)
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+};
+
+       
+  
     const manifestBlob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
     const manifestURL = URL.createObjectURL(manifestBlob);
     const link = document.createElement('link');
